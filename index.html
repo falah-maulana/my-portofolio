@@ -24,52 +24,74 @@
         .hero-glow {
             background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
         }
+        /* Mobile Menu Toggle Logic */
+        #menu-toggle:checked ~ #mobile-menu {
+            display: flex;
+        }
     </style>
 </head>
 <body class="bg-[#050507] text-slate-300 selection:bg-sky-500/30">
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#050507]/80 backdrop-blur-lg">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-white font-extrabold text-2xl tracking-tighter">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+            <div class="text-white font-extrabold text-xl md:text-2xl tracking-tighter">
                 FALAH MF<span class="text-sky-400">.</span>
             </div>
+            
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-10 text-[11px] font-bold uppercase tracking-[0.2em]">
+                <a href="#about" class="hover:text-sky-400 transition-colors">Tentang</a>
                 <a href="#work" class="hover:text-sky-400 transition-colors">Portofolio</a>
                 <a href="#services" class="hover:text-sky-400 transition-colors">Layanan</a>
-                <a href="#about" class="hover:text-sky-400 transition-colors">Tentang</a>
-                <a href="#contact" class="px-6 py-2.5 bg-white text-black rounded-full hover:bg-sky-400 hover:text-white transition-all transform active:scale-95">
+                <a href="#contact" class="px-6 py-2.5 bg-white text-black rounded-full hover:bg-sky-400 hover:text-white transition-all transform active:scale-95 text-[10px]">
                     Hubungi Saya
                 </a>
+            </div>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <input type="checkbox" id="menu-toggle" class="hidden">
+            <label for="menu-toggle" class="md:hidden flex flex-col gap-1.5 cursor-pointer z-50">
+                <span class="w-6 h-0.5 bg-white"></span>
+                <span class="w-6 h-0.5 bg-white"></span>
+                <span class="w-4 h-0.5 bg-white"></span>
+            </label>
+
+            <!-- Mobile Menu Overlay -->
+            <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#050507] border-b border-white/5 flex-col p-8 space-y-6 md:hidden animate-in fade-in slide-in-from-top-4 duration-300">
+                <a href="#work" onclick="document.getElementById('menu-toggle').checked = false" class="text-sm font-bold uppercase tracking-widest text-white hover:text-sky-400 transition-colors">Portofolio</a>
+                <a href="#services" onclick="document.getElementById('menu-toggle').checked = false" class="text-sm font-bold uppercase tracking-widest text-white hover:text-sky-400 transition-colors">Layanan</a>
+                <a href="#about" onclick="document.getElementById('menu-toggle').checked = false" class="text-sm font-bold uppercase tracking-widest text-white hover:text-sky-400 transition-colors">Tentang</a>
+                <a href="#contact" onclick="document.getElementById('menu-toggle').checked = false" class="text-sm font-bold uppercase tracking-widest text-sky-400 hover:text-white transition-colors">Hubungi Saya</a>
             </div>
         </div>
     </nav>
 
     <main>
         <!-- 1. Hero Section -->
-        <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <section class="relative min-h-screen flex items-center pt-24 md:pt-20 overflow-hidden px-6">
             <div class="absolute inset-0 hero-glow"></div>
             
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="max-w-7xl mx-auto relative z-10">
                 <div class="max-w-4xl">
-                    <div class="flex items-center space-x-3 mb-8">
+                    <div class="flex items-center space-x-3 mb-6 md:mb-8">
                         <span class="h-[1px] w-8 bg-sky-500"></span>
-                        <span class="text-sky-400 text-xs font-bold uppercase tracking-[0.3em]">Front-End </span>
+                        <span class="text-sky-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">Front-End Specialist</span>
                     </div>
                     
-                    <h1 class="text-6xl md:text-8xl font-extrabold text-white leading-[1.05] mb-10 tracking-tight">
+                    <h1 class="text-4xl sm:text-6xl md:text-8xl font-extrabold text-white leading-[1.1] md:leading-[1.05] mb-8 md:mb-10 tracking-tight">
                         Crafting <span class="text-gradient">fluid</span> digital experiences.
                     </h1>
                     
-                    <p class="text-xl md:text-2xl text-slate-400 leading-relaxed mb-12 max-w-2xl font-light">
+                    <p class="text-base md:text-2xl text-slate-400 leading-relaxed mb-10 md:mb-12 max-w-2xl font-light">
                         Saya membantu brand membangun antarmuka yang modern, interaktif, dan performan menggunakan <span class="text-white font-medium">Tailwind CSS</span> & <span class="text-white font-medium">Laravel</span>.
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row gap-5">
-                        <a href="#work" class="px-10 py-5 bg-sky-600 text-white rounded-2xl font-bold text-lg text-center hover:bg-sky-500 transition-all shadow-2xl shadow-sky-600/20">
+                    <div class="flex flex-col sm:flex-row gap-4 md:gap-5">
+                        <a href="#work" class="px-8 md:px-10 py-4 md:py-5 bg-sky-600 text-white rounded-2xl font-bold text-base md:text-lg text-center hover:bg-sky-500 transition-all shadow-xl md:shadow-2xl shadow-sky-600/20">
                             Lihat Karya Saya
                         </a>
-                        <a href="#services" class="px-10 py-5 bg-white/5 border border-white/10 text-white rounded-2xl font-bold text-lg text-center hover:bg-white/10 transition-all">
+                        <a href="#services" class="px-8 md:px-10 py-4 md:py-5 bg-white/5 border border-white/10 text-white rounded-2xl font-bold text-base md:text-lg text-center hover:bg-white/10 transition-all">
                             Eksplor Layanan
                         </a>
                     </div>
@@ -77,123 +99,134 @@
             </div>
         </section>
 
-        <!-- 2. Tech Stack Fokus Front-End -->
-        <section class="py-20 border-y border-white/5 bg-white/[0.01]">
+        <!-- 2. Tech Stack -->
+        <section class="py-12 md:py-20 border-y border-white/5 bg-white/[0.01]">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 items-center opacity-40 hover:opacity-100 transition-opacity">
-                    <span class="text-center font-bold text-sm tracking-widest uppercase">Figma</span>
-                    <span class="text-center font-bold text-sm tracking-widest uppercase">Tailwind</span>
-                    <span class="text-center font-bold text-sm tracking-widest uppercase">Bootstrap</span>
-                    <span class="text-center font-bold text-sm tracking-widest uppercase">JavaScript</span>
-                    <span class="text-center font-bold text-sm tracking-widest uppercase">Laravel</span>
+                <!-- Grid: 2 columns on mobile, 5 on desktop -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-12 items-center opacity-40 hover:opacity-100 transition-opacity">
+                    <span class="text-center font-bold text-xs md:text-sm tracking-widest uppercase">Figma</span>
+                    <span class="text-center font-bold text-xs md:text-sm tracking-widest uppercase">Tailwind</span>
+                    <span class="text-center font-bold text-xs md:text-sm tracking-widest uppercase">Bootstrap</span>
+                    <span class="text-center font-bold text-xs md:text-sm tracking-widest uppercase">JavaScript</span>
+                    <span class="text-center font-bold text-xs md:text-sm tracking-widest uppercase">Laravel</span>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Selected Projects -->
-        <section id="work" class="py-32">
+        <!-- 3. About Section -->
+        <section id="about" class="py-20 md:py-32 overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="mb-20">
-                    <h2 class="text-5xl font-extrabold text-white mb-6 tracking-tighter">Proyek Pilihan</h2>
-                    <p class="text-slate-400 text-lg">Eksperimen visual dan solusi digital fungsional.</p>
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <!-- Image/Visual Side -->
+                    <div class="relative order-2 lg:order-1">
+                        <div class="absolute -top-10 -left-10 w-48 md:w-64 h-48 md:h-64 bg-sky-500/10 rounded-full blur-[80px]"></div>
+                        <div class="relative z-10 aspect-[4/5] rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 glass-card p-2 md:p-4">
+                            <div class="w-full h-full rounded-[1.8rem] md:rounded-[2.2rem] bg-gradient-to-br from-slate-800 to-slate-950 flex items-center justify-center overflow-hidden">
+                                <img 
+                                    src="falah3.jpeg" 
+                                    alt="Foto Profil" 
+                                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                >
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 md:-bottom-6 -right-4 md:-right-6 glass-card px-6 py-4 md:px-8 md:py-6 rounded-2xl md:rounded-3xl border-sky-500/20 z-20 max-w-[150px] md:max-w-[200px] text-center">
+                            <span class="text-[9px] md:text-xs font-bold text-sky-400 uppercase tracking-widest leading-tight">Project-based Experience</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Side -->
+                    <div class="order-1 lg:order-2">
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 md:mb-8 tracking-tighter leading-tight">
+                            Membangun web yang rapi, fungsional, dan siap dikembangkan.
+                        </h2>
+                        <div class="space-y-4 md:space-y-6 text-slate-400 text-sm md:text-lg leading-relaxed font-light">
+                            <p>Saya adalah pengembang web dengan fokus pada Front-End dan implementasi UI yang bersih serta mudah digunakan.</p>
+                            <p>Dalam pengerjaan project, saya mengutamakan struktur yang jelas, performa yang baik, dan kemudahan pengembangan ke depannya. Saya terbiasa menggunakan <span class="text-white font-medium">Laravel</span> dan <span class="text-white font-medium">Tailwind CSS</span>.</p>
+                        </div>
+                        
+                        <div class="mt-8 md:mt-12 flex items-center gap-6 md:gap-8">
+                            <div class="flex -space-x-3 text-white">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#050507] bg-slate-800 flex items-center justify-center text-[8px] md:text-[10px] font-bold">FIG</div>
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#050507] bg-slate-800 flex items-center justify-center text-[8px] md:text-[10px] font-bold">LAR</div>
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#050507] bg-slate-800 flex items-center justify-center text-[8px] md:text-[10px] font-bold">TWD</div>
+                            </div>
+                            <span class="text-[11px] md:text-sm font-medium text-slate-500 italic">"User-centric development."</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Selected Projects -->
+        <section id="work" class="py-20 md:py-32">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-12 md:mb-20">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tighter">Proyek Pilihan</h2>
+                    <p class="text-slate-400 text-base md:text-lg">Solusi digital fungsional & visualisasi data.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-16">
+                <div class="grid md:grid-cols-2 gap-10 md:gap-16">
                     <!-- Project 1 -->
                     <div class="group">
-                        <!-- IMAGE CONTAINER -->
-                        <div class="relative overflow-hidden rounded-[2.5rem] bg-[#0c0c0e] aspect-video mb-8 border border-white/5">
-                            <div class="absolute inset-0 bg-sky-600/5 group-hover:bg-transparent transition-all duration-700 z-10"></div>
-                            
-                            <!-- TEMPAT NARUH GAMBAR PROJECT 1 -->
-                            <img 
-                                src="dashboard webgis.png" 
-                                alt="webgis project screenshot" 
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-100 group-hover:opacity-100">
+                        <div class="relative overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] bg-[#0c0c0e] aspect-video mb-6 border border-white/5 shadow-2xl">
+                            <img src="dashboard webgis.png" alt="webgis" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100">
                         </div>
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-2xl font-bold text-white mb-2">Pemetaan Banjir Desa Samu Jaya</h3>
-                                <p class="text-slate-400 mb-6">Fokus pada visualisasi data banjir menggunakan teknologi WebGIS.</p>
-                                <div class="flex gap-2">
-                                    <span class="text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/5 rounded-full">Laravel</span>
-                                    <span class="text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/5 rounded-full">Leaflet</span>
-                                    <span class="text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/5 rounded-full">Tailwind</span>
-                                </div>
-                            </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Pemetaan Banjir Desa Samu Jaya</h3>
+                        <p class="text-sm md:text-base text-slate-400 mb-6">Visualisasi data banjir menggunakan teknologi WebGIS dan Leaflet.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/5 rounded-full border border-white/5">Laravel</span>
+                            <span class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/5 rounded-full border border-white/5">Leaflet</span>
+                            <span class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/5 rounded-full border border-white/5">Tailwind</span>
                         </div>
                     </div>
 
                     <!-- Project 2 -->
                     <div class="group">
-                        <!-- IMAGE CONTAINER -->
-                        <div class="relative overflow-hidden rounded-[2.5rem] bg-[#0c0c0e] aspect-video mb-8 border border-white/5">
-                            <div class="absolute inset-0 bg-sky-600/5 group-hover:bg-transparent transition-all duration-700 z-10"></div>
-                            
-                            <!-- TEMPAT NARUH GAMBAR PROJECT 1 -->
-                            <img 
-                                src="siptl.png" 
-                                alt="webgis project screenshot" 
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-100 group-hover:opacity-100">
+                        <div class="relative overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] bg-[#0c0c0e] aspect-video mb-6 border border-white/5 shadow-2xl">
+                            <img src="siptl.png" alt="siptl" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100">
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-white mb-2">SIPTL  (Sistem Informasi Pemantauan Tindak Lanjut)</h3>
-                            <p class="text-slate-400 mb-6">Aplikasi mendukung pelaksanaan Tugas dan Wewenang BPK sesuai dengan Undang-undang yang berlaku.</p>
-                            <div class="flex gap-2">
-                                <!-- <span class="text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/5 rounded-full">Frontend</span> -->
-                                <span class="text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/5 rounded-full">Bootstrap</span>
-                                <span class="text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/5 rounded-full">Laravel</span>
-                            </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-2">SIPTL BPK RI</h3>
+                        <p class="text-sm md:text-base text-slate-400 mb-6">Sistem Pemantauan Tindak Lanjut tugas BPK sesuai Undang-undang.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/5 rounded-full border border-white/5">Bootstrap</span>
+                            <span class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white/5 rounded-full border border-white/5">Laravel</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Services (Front-End Priority) -->
-        <section id="services" class="py-32 bg-white/[0.01]">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="flex flex-col md:flex-row justify-between mb-20">
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Keahlian Saya</h2>
-                    
-                </div>
-
+        <!-- 5. Services -->
+        <section id="services" class="py-20 md:py-32 bg-white/[0.01]">
+            <div class="max-w-7xl mx-auto px-6 text-center md:text-left">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-12 md:mb-20 tracking-tighter">Keahlian Saya</h2>
                 <div class="grid md:grid-cols-3 gap-6">
-                    <div class="glass-card p-12 rounded-[2.5rem] hover:bg-white/[0.05] transition-all group">
-                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
-                            UI/UX Design
-                            <span class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-sky-400">→</span>
-                        </h3>
-                        <p class="text-slate-400 leading-relaxed">Dari wireframe hingga High-Fidelity prototype di Figma. Saya fokus pada estetika minimalis dan kegunaan maksimal.</p>
+                    <div class="glass-card p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] hover:bg-white/[0.05] transition-all group text-left">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">UI/UX Design</h3>
+                        <p class="text-slate-400 text-xs md:text-sm leading-relaxed">Dari wireframe hingga prototype Figma. Fokus pada estetika minimalis dan kegunaan maksimal.</p>
                     </div>
-                    <div class="glass-card p-12 rounded-[2.5rem] hover:bg-white/[0.05] transition-all group">
-                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
-                            UI Development
-                            <span class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-sky-400">→</span>
-                        </h3>
-                        <p class="text-slate-400 leading-relaxed">Mengubah desain statis menjadi kode Tailwind CSS yang bersih, responsif, dan siap diintegrasikan dengan Laravel.</p>
+                    <div class="glass-card p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] hover:bg-white/[0.05] transition-all group text-left">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">UI Development</h3>
+                        <p class="text-slate-400 text-xs md:text-sm leading-relaxed">Mengubah desain menjadi kode Tailwind/Bootstrap yang responsif dan siap integrasi Laravel.</p>
                     </div>
-                    <div class="glass-card p-12 rounded-[2.5rem] hover:bg-white/[0.05] transition-all group">
-                        <h3 class="text-2xl font-bold text-white mb-2 flex items-center">
-                            Interactive Web
-                            <span class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-sky-400">→</span>
-                        </h3>
-                        <p class="text-slate-400 leading-relaxed">Menambahkan nyawa pada website melalui animasi halus dan transisi antar halaman yang mulus.</p>
+                    <div class="glass-card p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] hover:bg-white/[0.05] transition-all group text-left">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Interactive Web</h3>
+                        <p class="text-slate-400 text-xs md:text-sm leading-relaxed">Menambahkan animasi halus untuk meningkatkan pengalaman interaksi pengguna di browser.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. Contact Section -->
-        <section id="contact" class="py-32 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-sky-500/10 rounded-full blur-[120px]"></div>
-            <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-                <h2 class="text-5xl md:text-7xl font-extrabold text-white mb-12 tracking-tighter">Bicara tentang ide anda?</h2>
-                <a href="mailto:falahmaulanaferdian@gmail.com" class="inline-block text-3xl md:text-2xl font-light text-slate-300 hover:text-sky-400 transition-all border-b border-white/10 pb-4">
+        <!-- 6. Contact Section -->
+        <section id="contact" class="py-20 md:py-32 px-6 relative overflow-hidden text-center">
+            <div class="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-sky-500/10 rounded-full blur-[100px]"></div>
+            <div class="max-w-7xl mx-auto relative z-10">
+                <h2 class="text-3xl md:text-7xl font-extrabold text-white mb-8 md:mb-12 tracking-tighter leading-tight">Bicara tentang ide anda?</h2>
+                <a href="mailto:falahmaulanaferdian@gmail.com" class="inline-block text-lg sm:text-2xl md:text-4xl font-light text-slate-300 hover:text-sky-400 transition-all border-b border-white/10 pb-2 md:pb-4 break-all">
                     falahmaulanaferdian@gmail.com
                 </a>
                 
-                <div class="mt-20 flex justify-center gap-12 font-bold text-[10px] tracking-[0.3em] uppercase">
+                <div class="mt-12 md:mt-20 flex justify-center gap-8 md:gap-12 font-bold text-[9px] md:text-[10px] tracking-[0.3em] uppercase">
                     <a href="https://www.instagram.com/falahmaulanaf/" class="hover:text-white transition-colors">Instagram</a>
                     <a href="https://www.linkedin.com/in/falah-maulana-ferdian" class="hover:text-white transition-colors">LinkedIn</a>
                 </div>
@@ -201,15 +234,12 @@
         </section>
     </main>
 
-    <footer class="py-12 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold tracking-widest text-slate-600 uppercase">
-            <p>© 2024 Visual Studio. All Rights Reserved.</p>
-            <p></p>
+    <footer class="py-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[9px] md:text-[10px] font-bold tracking-widest text-slate-600 uppercase gap-4">
+            <p>© 2024 Falah Maulana Ferdian. All Rights Reserved.</p>
+            <p>Made with Tailwind CSS</p>
         </div>
     </footer>
 
 </body>
-
 </html>
-
-
