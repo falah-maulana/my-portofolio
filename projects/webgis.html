@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studi Kasus: WebGIS Pemetaan Banjir | Falah MF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #6366f1, #38bdf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-glow {
+            background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+        }
+    </style>
+</head>
+<body class="bg-[#050507] text-slate-300 selection:bg-sky-500/30">
+
+    <!-- Simple Nav -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#050507]/80 backdrop-blur-lg">
+        <div class="max-w-5xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+            <a href="../index.html" class="text-white font-extrabold text-xl tracking-tighter flex items-center group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                KEMBALI
+            </a>
+            <div class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500 hidden sm:block">
+                Studi Kasus <span class="text-sky-500">01</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 md:pt-48 pb-20 bg-glow">
+        
+        <!-- 1. Hero Section -->
+        <section class="max-w-5xl mx-auto px-6 mb-24">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="h-[1px] w-8 bg-sky-500"></span>
+                <span class="text-sky-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">Government Tech / WebGIS</span>
+            </div>
+            <h1 class="text-4xl md:text-7xl font-extrabold text-white mb-8 tracking-tighter leading-tight">
+                Sistem Pemetaan Banjir <br class="hidden md:block"> WebGIS <span class="text-gradient">Samu Jaya</span>.
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-400 font-light max-w-3xl mb-12">
+                Infrastruktur digital yang dirancang untuk memvisualisasikan area rawan banjir, mendukung pemantauan bencana dan perencanaan wilayah berbasis data.
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 border-y border-white/5">
+                <div>
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Peran</p>
+                    <p class="text-white font-medium">Front-End Developer</p>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Platform</p>
+                    <p class="text-white font-medium">Aplikasi Web</p>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Klien</p>
+                    <p class="text-white font-medium">Desa Samu Jaya</p>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Teknologi</p>
+                    <p class="text-white font-medium">Laravel, Leaflet, TW</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Placeholder for Main Image -->
+        <section class="max-w-7xl mx-auto px-6 mb-32">
+            <div class="aspect-video w-full rounded-[2rem] md:rounded-[3rem] bg-slate-900 border border-white/5 overflow-hidden shadow-2xl relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <img src="../dashboard webgis.png" alt="WebGIS Desa Samu Jaya">
+                </div>
+            </div>
+        </section>
+
+        <div class="max-w-5xl mx-auto px-6 space-y-32">
+            
+            <!-- 2. Project Background -->
+            <section class="grid md:grid-cols-3 gap-12">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tighter">Latar Belakang <br>Proyek</h2>
+                <div class="md:col-span-2 space-y-6 text-slate-400 text-lg leading-relaxed font-light">
+                    <p>Desa Samu Jaya menghadapi tantangan banjir musiman berulang yang berdampak pada infrastruktur lokal dan keselamatan warga. Sebelumnya, data banjir dikelola melalui pelaporan manual dan catatan berbasis kertas.</p>
+                    <p>Dibutuhkan sistem digital yang terpusat dan mudah diakses untuk memvisualisasikan data ini secara geografis guna mendukung respon yang lebih cepat dan perencanaan jangka panjang.</p>
+                </div>
+            </section>
+
+            <!-- 3. Problem Statement -->
+            <section class="grid md:grid-cols-3 gap-12">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tighter">Masalah Utama</h2>
+                <div class="md:col-span-2 grid sm:grid-cols-2 gap-8">
+                    <div class="glass-card p-8 rounded-3xl border-white/5">
+                        <h4 class="text-white font-bold mb-4">Minim Visualisasi</h4>
+                        <p class="text-sm leading-relaxed">Pihak terkait kesulitan mengidentifikasi zona risiko tinggi tanpa tampilan spasial, yang menyebabkan alokasi sumber daya kurang efisien.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl border-white/5">
+                        <h4 class="text-white font-bold mb-4">Akses Data Sulit</h4>
+                        <p class="text-sm leading-relaxed">Data banjir historis terpisah-pisah dan sulit diakses dengan cepat oleh departemen perencanaan saat dibutuhkan segera.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Solution -->
+            <section class="grid md:grid-cols-3 gap-12">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tighter">Solusi Yang <br>Diberikan</h2>
+                <div class="md:col-span-2 space-y-6 text-slate-400 text-lg leading-relaxed font-light">
+                    <p>Saya mengembangkan platform <span class="text-white font-medium">WebGIS kustom</span> yang mengintegrasikan lapisan data geografis dengan dashboard manajemen yang intuitif.</p>
+                    <p>Solusi ini menjadi "satu-satunya sumber kebenaran" di mana tingkat risiko diberi kode warna yang jelas, memungkinkan pengguna non-teknis untuk langsung memahami data lingkungan yang kompleks.</p>
+                </div>
+            </section>
+
+            <!-- 5. Key Features -->
+            <section class="grid md:grid-cols-3 gap-12">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tighter">Fitur <br>Unggulan</h2>
+                <div class="md:col-span-2 space-y-12">
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 flex-shrink-0 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-400 font-bold">01</div>
+                        <div>
+                            <h4 class="text-white font-bold mb-2">Pemetaan Risiko Interaktif</h4>
+                            <p class="text-sm leading-relaxed">Navigasi antara riwayat banjir, tingkat risiko, dan lapisan infrastruktur penting menggunakan legenda peta yang interaktif.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 flex-shrink-0 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-400 font-bold">02</div>
+                        <div>
+                            <h4 class="text-white font-bold mb-2">Antarmuka GIS Responsif</h4>
+                            <p class="text-sm leading-relaxed">UI khusus yang menjaga kemudahan penggunaan peta dan keterbacaan data baik di desktop maupun perangkat mobile Android.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 flex-shrink-0 bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-400 font-bold">03</div>
+                        <div>
+                            <h4 class="text-white font-bold mb-2">Update Data Real-time</h4>
+                            <p class="text-sm leading-relaxed">Integrasi backend memungkinkan administrator untuk menambah titik banjir baru dan menyesuaikan zona risiko tanpa bantuan teknis.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Process -->
+            <section class="grid md:grid-cols-3 gap-12">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tighter">Proses <br>Pengembangan</h2>
+                <div class="md:col-span-2 border-l border-white/5 pl-8 space-y-12">
+                    <div>
+                        <h4 class="text-white font-bold mb-2">01. Riset & Penemuan</h4>
+                        <p class="text-sm">Berkolaborasi dengan aparat desa untuk mengidentifikasi titik data utama dan kelompok pengguna target.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">02. Pemrosesan Data</h4>
+                        <p class="text-sm">Membersihkan dan memformat data spasial (GeoJSON/Shapefiles) untuk render web menggunakan Leaflet.js.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">03. UI/UX Prototyping</h4>
+                        <p class="text-sm">Merancang antarmuka dashboard di Figma yang memprioritaskan visibilitas peta dan kemudahan navigasi.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">04. Pengembangan Frontend</h4>
+                        <p class="text-sm">Membangun antarmuka menggunakan Tailwind CSS, memastikan performa maksimal dan container peta yang responsif.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Result & Impact -->
+            <section class="py-20 bg-white/[0.02] rounded-[3rem] px-10 text-center">
+                <h2 class="text-3xl font-bold text-white mb-8 tracking-tighter uppercase">Hasil Akhir</h2>
+                <p class="text-xl text-slate-400 font-light max-w-2xl mx-auto mb-12 italic">
+                    "Sistem ini telah secara signifikan meningkatkan cara kami memvisualisasikan risiko lingkungan, mengubah data statis menjadi wawasan yang dapat ditindaklanjuti bagi masyarakat."
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <span class="block text-3xl font-extrabold text-white">100%</span>
+                        <span class="text-[10px] font-bold text-sky-400 uppercase tracking-widest">Catatan Digital</span>
+                    </div>
+                    <div>
+                        <span class="block text-3xl font-extrabold text-white">Cepat</span>
+                        <span class="text-[10px] font-bold text-sky-400 uppercase tracking-widest">Pengambilan Keputusan</span>
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                        <span class="block text-3xl font-extrabold text-white">Mudah</span>
+                        <span class="text-[10px] font-bold text-sky-400 uppercase tracking-widest">Pemeliharaan</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Tech Stack Section -->
+            <section class="grid md:grid-cols-3 gap-12 items-center">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-tighter">Dibangun Dengan</h2>
+                <div class="md:col-span-2 flex flex-wrap gap-4">
+                    <span class="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-white font-bold text-xs uppercase tracking-widest">Laravel 11</span>
+                    <span class="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-white font-bold text-xs uppercase tracking-widest">Tailwind CSS</span>
+                    <span class="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-white font-bold text-xs uppercase tracking-widest">Leaflet.js</span>
+                    <span class="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-white font-bold text-xs uppercase tracking-widest">MySQL</span>
+                    <span class="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-white font-bold text-xs uppercase tracking-widest">Figma</span>
+                </div>
+            </section>
+
+            <!-- 9. CTA -->
+            <section class="py-32 text-center border-t border-white/5">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-8 tracking-tighter">Butuh solusi serupa?</h2>
+                <p class="text-lg text-slate-500 mb-12 max-w-lg mx-auto leading-relaxed">
+                    Saya ahli dalam membangun sistem pemetaan dan dashboard data yang memecahkan masalah nyata di lapangan.
+                </p>
+                <a href="mailto:falahmaulanaferdian@gmail.com" class="inline-block px-12 py-5 bg-sky-600 text-white rounded-2xl font-bold text-lg hover:bg-sky-500 transition-all shadow-2xl shadow-sky-600/20 active:scale-95">
+                    Diskusikan Proyek Serupa
+                </a>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="py-12 border-t border-white/5">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold tracking-[0.3em] text-slate-600 uppercase gap-4">
+            <p>© 2024 Falah Maulana Ferdian.</p>
+            <p>Konteks Backend: Infrastruktur Laravel</p>
+        </div>
+    </footer>
+
+</body>
+</html>
